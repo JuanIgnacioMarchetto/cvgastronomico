@@ -2,65 +2,67 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* General Styling */
 img {
-    height: 200px;
+    max-width: 100%;
+    height: auto;
     border: #0e3305 solid 5px;
 }
 
 a {
     color: black;
-    text-decoration-line: none;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
+    text-decoration: none;
 }
 
 .container {
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1200px;
-    padding: 20px;
 }
 
+/* Sidebar (Hidden on smaller screens) */
 .sidebar {
-    height: 100vh;
-    width: 250px;
+    width: 100%;
     background-color: #48f325;
-    padding: 20px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: sticky;
-    top: 0;
-    margin-right: 15px;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
 }
 
 .sidebar ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
 }
 
 .sidebar ul li {
-    padding: 10px;
-    width: fit-content;
+    padding: 5px 0;
 }
 
+.sidebar img {
+    display: block;
+    margin: 0 auto 10px;
+    width: 100%;
+    max-width: 150px;
+}
+
+/* Content */
 .content {
-    width: calc(100% - 265px);
-    padding: 20px;
+    width: 100%;
 }
 
 .content h2 {
-    margin-top: 20px;
     color: #48f325;
+    margin-bottom: 10px;
 }
 
 .content .job {
@@ -68,92 +70,49 @@ body {
 }
 
 .content .job h3 {
-    margin-bottom: 5px;
     color: #333;
+    margin-bottom: 5px;
 }
 
 .content .job p {
-    margin: 5px 0;
     color: #666;
+    margin: 5px 0;
 }
 
-@media print {
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-    img {
-        height: 200px;
-        border: #0e3305 solid 5px;
-    }
-    
-    a {
-        color: black;
-        text-decoration-line: none;
-    }
-    
+/* Desktop Styles */
+@media (min-width: 768px) {
     body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        display: flex;
+        flex-direction: row;
         justify-content: center;
     }
-    
+
     .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         max-width: 1200px;
+        flex-direction: row;
+        justify-content: space-between;
         padding: 20px;
     }
-    
+
     .sidebar {
-        height: 100vh;
         width: 250px;
-        background-color: #48f325;
-        padding: 20px;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        height: auto;
+        margin: 0;
         position: sticky;
         top: 0;
-        margin-right: 15px;
     }
-    
-    .sidebar ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .sidebar ul li {
-        padding: 10px;
-        width: fit-content;
-    }
-    
+
     .content {
-        width: calc(100% - 265px);
+        width: calc(100% - 270px);
+        margin-left: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 30px;
+    }
+
+    .sidebar {
         padding: 20px;
     }
-    
-    .content h2 {
-        margin-top: 20px;
-        color: #48f325;
-    }
-    
-    .content .job {
-        margin-bottom: 20px;
-    }
-    
-    .content .job h3 {
-        margin-bottom: 5px;
-        color: #333;
-    }
-    
-    .content .job p {
-        margin: 5px 0;
-        color: #666;
-    }}
+}
